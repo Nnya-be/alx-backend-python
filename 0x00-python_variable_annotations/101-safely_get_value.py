@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 """Typing with Typevar."""
-from typing import TypeVar, Mapping, Optional
+from typing import Any, Mapping, Union, TypeVar
+
 
 T = TypeVar('T')
+Res = Union[Any, T]
+Def = Union[T, None]
 
-def safely_get_value(dct: Mapping[str, T], key: str, default: Optional[T] = None) -> Optional[T]:
+def safely_get_value(dct: Mapping, key: Any, default: Def = None) -> Res:
     """
     Safely get a value from a dictionary.
 
