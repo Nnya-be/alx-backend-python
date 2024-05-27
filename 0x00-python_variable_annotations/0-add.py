@@ -2,5 +2,6 @@
 """Add function."""
 
 
-def add(a:float, b:float) ->float:
-    return (a+b)
+def add(a: float, b: float) -> float:
+    """Add a and b and returns a float type."""
+    return (a + b)
