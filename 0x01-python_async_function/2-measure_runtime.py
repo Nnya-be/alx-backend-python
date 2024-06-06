@@ -7,16 +7,17 @@ import asyncio
 import time
 wait_n = __import__('1-concurrent_coroutines').wait_n
 
+
 async def measure_time(n: int, max_delay: int) -> float:
     """
     Measures the total execution time for wait_n(n, max_delay) and returns
     the average time per task.
-    
+
     Args:
         n (int): Number of times to spawn wait_random.
         max_delay (int): Maximum delay for wait_random.
-    
-    Returns:
+
+        Returns:
         float: Average execution time per task.
     """
     start_time = time.time()
