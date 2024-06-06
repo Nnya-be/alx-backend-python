@@ -5,7 +5,7 @@ Module to measure the runtime of wait_n.
 
 import asyncio
 import time
-from concurrent_coroutines import wait_n
+wait_n = __import__('1-concurrent_coroutines').wait_n
 
 async def measure_time(n: int, max_delay: int) -> float:
     """
