@@ -1,21 +1,11 @@
 #!/usr/bin/env python3
 """Basic async code."""
-
-from typing import List, Tuple
-
-
-def zoom_array(lst: Tuple, factor: int = 2) -> List:
-    '''Creates multiple copies of items in a tuple.
-    '''
-    zoomed_in: List = [
-        item for item in lst
-        for i in range(int(factor))
-    ]
-    return zoomed_in
+import asyncio
+import random
 
 
-array = (12, 72, 91)
-
-zoom_2x = zoom_array(array)
-
-zoom_3x = zoom_array(array, 3)
+async def wait_random(max_delay: int = 10) -> float:
+    """Create a delay of an int value."""
+    delay = random.uniform(0, max_delay)
+    await asyncio.sleep(delay)
+    return delay
